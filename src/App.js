@@ -27,6 +27,11 @@ function App() {
       clearInput()
     }
   }
+  const removeThis = index => {
+    let newArr = [...list]
+    newArr.splice(index, 1)
+    setList([...newArr])
+  }
 
   // checkers
   const clearInput = () => {
@@ -56,7 +61,12 @@ function App() {
       <div>
         <ul>
           {list.map((item, index) => {
-            return (<li key={index}>{item}</li>)
+            return (
+              <div key={index}>
+                <li>{item}</li>
+                <button onClick={() => removeThis(index)}>Delet</button>
+              </div>
+            )
           })}
         </ul>
       </div>
