@@ -19,12 +19,18 @@ function App() {
   const clearList = () => {
     setList([])
   }
+  const removeThisItem = position => {
+    let newArr = [...list]
+    // from position 'position' remove '1' item(s)
+    newArr.splice(position, 1)
+    setList([...newArr])
+  }
 
   return (
     <main>
       <ToDoForm list={list} clearList={clearList} onAddItem={onAddItem}/>
 
-      <ToDoList list={list}/>
+      <ToDoList removeThisItem={removeThisItem} list={list}/>
     </main>
   )
 }

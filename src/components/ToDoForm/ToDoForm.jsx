@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 export const ToDoForm = (props) => {
+  // states
   const [input, setInput] = useState('')
 
   // actions
@@ -15,12 +16,14 @@ export const ToDoForm = (props) => {
     props.onAddItem(input)
     clearInput()
   }
-  const checkList = () => {
+  const checkList = (event) => {
+    event.preventDefault()
+
     if (props.list.length === 0) return null
 
     let resp = prompt('Are you sure? (Type anything and press OK)')
     if (resp) {
-      props.setList([])
+      props.clearList()
     }
   }
 
