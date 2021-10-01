@@ -22,7 +22,6 @@ h1 {
 }
 
 form {
-  border: 1px solid blue;
   margin-top: 50px;
   height: 100px;
 
@@ -61,10 +60,37 @@ input:focus {
   background-color: #26051dc7;
 }
 
-
 ul {
-  border: 1px solid black;
-  display: inline-block;
   margin-top: 10px;
   list-style: none;
+  /* width: 400px; */
+}
+.card {
+  margin: 0 auto 10px auto;
+  min-height: 400px;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 2px solid #BF5A50;
+  min-height: 60px;
+  padding: 5px;
+  text-align: left;
+}
+li {
+  min-width: 250px;
+  max-width: 800px;
+  overflow: auto;
+}
+.done {
+  text-decoration: line-through;
+}
+.btn-image {
+  width: 45px;
+  border: none;
+  background-color: transparent;
+}
+.btn-image:first-child {
+  margin-right: 20px;
 }

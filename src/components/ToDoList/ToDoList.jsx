@@ -1,4 +1,6 @@
 import React from 'react'
+import {Card} from '../Card'
+import {ListItem} from '../ListItem/ListItem'
 
 export const ToDoList = ({list, onItemDeleted, onDone}) => {
   const DoneImg = ({done}) => {
@@ -13,13 +15,16 @@ export const ToDoList = ({list, onItemDeleted, onDone}) => {
     <ul>
       {list.map(item => {
         return (
-          <div className="note" key={item.id}>
+          <Card className="card" key={item.id}>
             <li className={item.done ? 'done' : 'undone'}>{item.text}</li>
-            <button onClick={() => onDone(item)}><DoneImg done={item.done}/></button>
-            <button onClick={() => onItemDeleted(item)}>Remove this item</button>
-          </div>
+            <div className="div-btn">
+              <button className="btn-image" onClick={() => onDone(item)}><DoneImg done={item.done}/></button>
+              <button className="btn-image" onClick={() => onItemDeleted(item)}><img alt="Delet" src="./assets/delet.svg"/></button>
+            </div>
+          </Card>
         )
       })}
+      {/* {list.map(item => <ListItem item={item} onDone={onDone} onItemDeleted={onItemDeleted}/>)} */}
     </ul>
   )
 }
