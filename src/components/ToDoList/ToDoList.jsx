@@ -1,6 +1,5 @@
 import React from 'react'
 import {Card} from '../Card'
-import {ListItem} from '../ListItem/ListItem'
 
 export const ToDoList = ({list, onItemDeleted, onDone}) => {
   const DoneImg = ({done}) => {
@@ -24,7 +23,6 @@ export const ToDoList = ({list, onItemDeleted, onDone}) => {
           </Card>
         )
       })}
-      {/* {list.map(item => <ListItem item={item} onDone={onDone} onItemDeleted={onItemDeleted}/>)} */}
     </ul>
   )
 }

@@ -1,13 +1,14 @@
 import {useState, useEffect} from 'react'
-import {ToDoForm, ToDoList} from './components'
+import {ToDoForm, ToDoList, Modal} from './components'
 import Item from './globals/Item'
-import './App.css'
+import './ToDo.css'
 
 const SAVED_LIST = 'savedList'
 
-function App() {
+function ToDo() {
   // states
   const [list, setList] = useState([])
+  const [showModal, setShowModal] = useState(false)
 
   // firstLoaded
   useEffect(() => {
@@ -27,6 +28,7 @@ function App() {
   const onAddItem = text => {
     let item = new Item(text)
     setList([...list, item])
+    setShowModal(false)
   }
   const clearList = () => {
     setList([])
@@ -44,17 +46,25 @@ function App() {
     })
 
     setList(updateListItems)
-  } 
+  }
+  const onHideModal = () => {
+    setShowModal(false)
+  }
 
   return (
     <>
-      <h1>To do list</h1>
-
-      <ToDoForm list={list} clearList={clearList} onAddItem={onAddItem}/>
+      <header>
+        <h1>To do list</h1>
+        <button className="button-item" onClick={() => setShowModal(true)}>Add item</button>
+      </header>
 
       <ToDoList onDone={onDone} onItemDeleted={onItemDeleted} list={list}/>
+
+      <Modal show={showModal} onHideModal={onHideModal}>
+        <ToDoForm list={list} clearList={clearList} onAddItem={onAddItem}/>
+      </Modal>
     </>
   )
 }
 
-export default App
+export default ToDo
