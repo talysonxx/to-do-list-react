@@ -12,7 +12,7 @@ Instala as dependências
 
 #### `npm start`
 
-Irá abrir uma guia na URL [http://localhost:3000/](
+Irá abrir uma guia na URL [http://localhost:3000/](https://localhost:3000)
 
 ###### Meus **contatos**
 
