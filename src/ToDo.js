@@ -1,3 +1,4 @@
+import {Fragment} from 'react'
 import {useState, useEffect} from 'react'
 import {ToDoForm, ToDoList, Modal} from './components'
 import Item from './globals/Item'
@@ -32,6 +33,7 @@ function ToDo() {
   }
   const clearList = () => {
     setList([])
+    onHideModal()
   }
   const onItemDeleted = item => {
     let filteredItems = list.filter(it => it.id !== item.id)
@@ -52,7 +54,7 @@ function ToDo() {
   }
 
   return (
-    <>
+    <Fragment>
       <header>
         <h1>To do list</h1>
         <button className="button-item" onClick={() => setShowModal(true)}>Add item</button>
@@ -63,7 +65,7 @@ function ToDo() {
       <Modal show={showModal} onHideModal={onHideModal}>
         <ToDoForm list={list} clearList={clearList} onAddItem={onAddItem}/>
       </Modal>
-    </>
+    </Fragment>
   )
 }
 

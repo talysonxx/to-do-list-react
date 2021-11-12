@@ -120,6 +120,7 @@ li {
 
 .btn-image:first-child {
   margin-right: 20px;
+  margin-left: 10px;
 }
 
 /* modal */
@@ -142,4 +143,30 @@ li {
 }
 .hide-modal {
   display: none;
+}
+
+/* responsivite */
+@media only screen and (max-width: 950px) {
+  .div-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 700px) {
+  header {
+    width: 95%;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 380px) {
+  header {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130px;
+  }
+  h1 {
+    margin: 0;
+  }
 }
