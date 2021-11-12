@@ -161,6 +161,16 @@ li {
     width: 95%;
   }
 }
+@media only screen and (max-width: 550px) {
+  .card-modal {
+    padding: 20px 10px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  input {
+    width: 310px;
+  }
+}
 @media only screen and (max-width: 380px) {
   header {
     flex-direction: column;

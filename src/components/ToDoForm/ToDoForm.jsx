@@ -39,7 +39,7 @@ export const ToDoForm = (props) => {
     <form>
         <input placeholder="Type something..." type="text" value={input} onChange={handleChange}/>
 
-        <div>
+        <div id="btn-form">
           <button className="button-input button-add" onClick={addItem}>Add item</button>
           <button className="button-input button-removeAll" onClick={checkList}>Clear list</button>
         </div>
