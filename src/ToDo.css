@@ -21,11 +21,9 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 50%;
-  /* margin: 10px auto 0 auto; */
   margin: 20px auto;
 }
 h1 {
-  margin-top: 20px;
   font-size: 45px;
   font-weight: bolder;
   color: #A66124;
@@ -159,6 +157,9 @@ li {
     width: 95%;
     justify-content: space-between;
   }
+  li {
+    width: 95%;
+  }
 }
 @media only screen and (max-width: 380px) {
   header {
@@ -166,7 +167,16 @@ li {
     justify-content: space-between;
     height: 130px;
   }
-  h1 {
-    margin: 0;
+  .card {
+    flex-direction: column;
+  }
+  li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  .div-btn {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
   }
 }
